@@ -1,0 +1,31 @@
+help
+generate 200 200 20 40 60 40 60 80 20
+edit sepia
+edit blur
+export image ex1\ex1img1.jpg
+generate 200 200 60 80 100 100 80 60 20
+edit monochrome
+export image ex1\ex1img2.png
+hide 1
+export image ex1\ex1img3.ppm
+generate 200 200 100 100 100 200 200 200 20
+export image ex1\ex1img4.jpg
+hide 2
+edit sharpen
+edit sharpen
+export image ex1\ex1img5.jpg
+show 2
+show 1
+export image ex1\ex1img6.jpg
+hide 2
+export image ex1\ex1img7.jpg
+hide 1
+export image ex1\ex1img8.jpg
+export project ex1\ex1proj1
+import project ex1\ex1proj1
+export image ex1\ex1img9.jpg
+show 1
+export image ex1\ex1img10.jpg
+show 2
+export image ex1\ex1img11.jpg
+q

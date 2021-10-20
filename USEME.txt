@@ -1,0 +1,46 @@
+To start Text mode, add the -text tag to the end of the jar starting command.
+To start Interactive mode, add the -interactive tag to the end of the jar starting command.
+To start a script, add the -script tag, followed by the script file at the end of the jar starting command
+
+INTERACTIVE MODE:
+SUPPORTED COMMANDS:
+ - File menu: new, load (image/project), save (image/project)
+              New: completely resets the editor.
+              Load: Two modes
+                  Image: Loads an image as a new layer (be sure it's the same size as the layers below)
+                  Project: Removes what's currently in the editor and loads a complete project from a selected directory
+              Save:
+                  Image: Saves the top-most visible image to the specified file name
+                  Project: Saves the entire project to the specified directory
+ - Edit menu: blur, sharpen, sepia, grayscale, mosaic, resize
+              All of these apply the specified effect to the top most visible image, with the exception of resize, which is
+              applied to all images in the project. Mosaic and resize will prompt for the number of seeds and the
+              width + height, respectively. It is possible to cancel these operations by just x-ing out of the argument prompts.
+ - Layer menu: generate checkerboard, remove, show, hide, visibility
+               Generate: Adds a new layer with a generated checkerboard image, with height, width, 2 colors, and square size specified
+                         by the user.
+               Remove: Removes the specified layer
+               Show: Sets the specified layer to visible
+               Hide: Sets the specified layer to invisible
+               Visibility: Hover over this menu to see which layers in the project are visible, indicated by a check next to their labels
+
+TEXT MODE:
+SUPPORTED COMMANDS:
+help {displays list of possible commands}
+import ['project', 'image'] [path] {imports an image to the top layer or imports an entire previously saved project}
+  ex. import image example.png
+export ['project', 'image'] [path] {exports an the topmost image or the entire project to the specified path}
+  ex. export project directory\whereTheProjectWillGo
+  NOTE: export will not overwrite a project that is already saved at the specified path, so if you wish to
+        overwrite an existing project, you must delete the project folder.
+hide [layer #] {makes the specified layer invisible}
+  ex. hide 0
+show [layer #] {makes the specified layer visible}
+  ex. show 1
+edit [blur, sharpen, monochrome, sepia] {modifies the top layer with the specified edit subcommand}
+  ex. edit blur
+generate [height] [width] [r1] [g1] [b1] [r2] [g2] [b2] [squaresize] {generates a checkerboard image}
+  ex. generate 200 200 40 60 80 60 80 100 20
+q {quits}
+
+NOTE: either an import or a generate command must be run to load an image before export, hide, show, or edit are run.

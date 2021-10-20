@@ -1,0 +1,21 @@
+import image ex2\ok.png
+import image ex2\lemon_tooBig.jpg
+import image ex2\lemon_resized.jpg
+import image ex2\apple.ppm
+generate 353 343 20 40 60 160 140 120 20
+hide 3
+hide 1
+export project ex2\res\ex2proj1
+generate 353 343 20 80 28 58 255 59 40
+import project ex2\res\ex2proj1
+export image ex2\res\shouldBeApple.ppm
+import image ex2\res\shouldBeApple.ppm
+export image ex2\res\shouldBeApple.jpg
+hide 4
+hide 2
+export image ex2\res\shouldBeOk.png
+show 1
+export image ex2\res\shouldBeLemon.png
+show 3
+export image ex2\res\shouldBeCheckers.png
+q
